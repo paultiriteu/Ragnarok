@@ -1,0 +1,52 @@
+﻿<h1 md-title class="titlu" *ngIf="result.Id">Editați nota</h1>
+<h1 md-title class="titlu" *ngIf="!result.Id">Adăugați notă</h1>
+<div class="container">
+    <div class="col-lg-10 col-md-10 col-sm-12">
+        <h2>{{student.FirstName}} {{student.LastName}}</h2>
+        <h4>Clasa a {{student.Year}}-a {{student.Class}}</h4>
+        <hr />
+        <div class="element">
+            <md-list-item>
+                <md-select class="dialog-select" placeholder="Selectati o materie..." [(ngModel)]="selectedSubject.Id" (change)="filterProfessors()" required>
+                    <md-option *ngFor="let subject of subjects" [value]="subject.Id">
+                        {{subject.Name}}
+                    </md-option>
+                </md-select>
+            </md-list-item>
+        </div>
+        <div class="element">
+            <md-list-item>
+                <fieldset *ngIf="selectedSubject.Id != undefined">
+                    <md-select class="dialog-select" placeholder="Profesorul care a dat nota" [(ngModel)]="selectedProfessor.Id" required>
+                        <md-option *ngFor="let professor of filteredProfessors" [value]="professor.Id">
+                            {{professor.FirstName}} {{professor.LastName}}
+                        </md-option>
+                    </md-select>
+                </fieldset>
+            </md-list-item>
+        </div>
+        <div class="element">
+            <md-list-item>
+                <md-input-container>
+                    <input mdInput type="number" min="1" max="10" placeholder="Nota" [(ngModel)]="result.Mark" required>
+                </md-input-container>
+            </md-list-item>
+        </div>
+        <div class="element">
+            <md-list-item>
+                <md-input-container>
+                    <input mdInput placeholder="Data (dd/mm/yyyy )" [(ngModel)]="result.Date" required>
+                </md-input-container>
+            </md-list-item>
+        </div>
+        <div class="element">
+            <md-list-item>
+                <button md-raised-button color="primary" (click)="save()">Salvati</button>
+                <button md-raised-button (click)="cancel()">Renuntati</button>
+            </md-list-item>
+        </div>
+        <md-list-item>
+            <span *ngIf="errorMessage" class="error-message">{{errorMessage}}</span>
+        </md-list-item>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿<div class="container">
+    <h1>{{student.FirstName}} {{student.LastName}}</h1>
+    <h3>Clasa a {{student.Year}}-a {{student.Class}}</h3>
+    <hr />
+
+    <div>
+        <button md-raised-button color="primary" (click)="createResult()">Adăugați o notă</button>
+    </div>
+
+    <div class="note" *ngFor="let subject of subjects">
+        <label for="nota">{{subject.Name}}</label>
+        <div *ngIf="subject.Results">
+            <a id="nota" *ngFor="let result of subject.Results" (click)="goToDetails(result)">{{result.Mark}}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿<h1 md-title class="titlu" *ngIf="result.Id">Detalii notă</h1>
+<div class="container">
+    <div class="col-lg-10 col-md-10 col-sm-12">
+        <h2>{{student.FirstName}} {{student.LastName}}</h2>
+        <h4>Clasa a {{student.Year}}-a {{student.Class}}</h4>
+        <hr />
+
+        <div>
+            <p>Nota {{result.Mark}} la materia {{subject.Name}} i-a fost dată elevului {{student.FirstName}} {{student.LastName}} la data {{result.Date}} de către profesorul cu numele: {{professor.FirstName}} {{professor.LastName}}</p>
+        </div>
+
+        <md-list-item>
+            <!--<button md-raised-button color="primary" (click)="edit()">Editați</button>-->
+            <button md-raised-button (click)="cancel()">Înapoi</button>
+            <button md-raised-button class="delete-button" (click)="delete()">Ștergeți</button>
+        </md-list-item>
+    </div>
+</div>

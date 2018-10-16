@@ -1,0 +1,26 @@
+﻿.mat-select-panel {
+    margin: 1em 0;
+    padding-bottom: 6px;
+    margin-top: 10px;
+    width: calc(50%);
+}
+
+.mat-select-panel-done-animating {
+    margin: 1em 0;
+    padding-bottom: 6px;
+    margin-top: 10px;
+    width: calc(50%);
+}
+
+.error-message {
+    margin: 1%;
+    color: red;
+}
+
+.element {
+    margin-top: 3%;
+}
+
+.titlu {
+    text-align: center;
+}

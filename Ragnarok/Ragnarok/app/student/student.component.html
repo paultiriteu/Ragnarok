@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="page-header">
+        <h1>Lista studenților</h1>
+    </div>
+    <form action="POST" class="left-side-radios">
+        <div class="label-wrapper">
+            <label class="radio-inline"><input type="radio" name="clasa" class="radio-btn" (click)="filterStudents(0)">Toti elevii</label>
+        </div>
+        <div class="label-wrapper">
+            <label class="radio-inline"><input type="radio" name="clasa" class="radio-btn" (click)="filterStudents(9)">Clasa IX</label>
+        </div>
+        <div class="label-wrapper">
+            <label class="radio-inline"><input type="radio" name="clasa" class="radio-btn" (click)="filterStudents(10)">Clasa X</label>
+        </div>
+        <div class="label-wrapper">
+            <label class="radio-inline"><input type="radio" name="clasa" class="radio-btn" (click)="filterStudents(11)">Clasa XI</label>
+        </div>
+        <div class="label-wrapper">
+            <label class="radio-inline"><input type="radio" name="clasa" class="radio-btn" (click)="filterStudents(12)">Clasa XII</label>
+        </div>
+    </form>
+
+
+    <div class="table-responsive right-side-table">
+        <table class="table table-hover table-condensed">
+            <tr>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Clasa</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let student of filteredStudents">
+                <td>{{student.LastName}}</td>
+                <td>{{student.FirstName}}</td>
+                <td>A {{student.Year}}-a {{student.Class}}</td>
+                <td><a (click)="goToResults(student.Id)">Vezi note</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

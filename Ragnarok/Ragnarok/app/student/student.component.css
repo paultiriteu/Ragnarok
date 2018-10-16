@@ -1,0 +1,35 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 1%;
+}
+
+.page-header {
+    text-align: center;
+}
+
+th, td {
+    text-align: center;
+}
+
+.left-side-radios {
+    width: 25%;
+    float: left;
+    padding: 1%;
+    background: linear-gradient(to right, rgb(63, 81, 181), white, white);
+}
+
+.radio-inline {
+    font-weight: bold;
+}
+
+.right-side-table {
+    width: 50%;
+    float: left;
+}
+
+.label-wrapper {
+    margin-bottom: 1%;
+}
